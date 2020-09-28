@@ -1,29 +1,22 @@
+## Auth with Firebase
 
-
-## Use firebase Auth
+## Enable Auth in Firebase
 1. Click Authentication
 2. Click Sign-in method
 3. Enable Email/Pasword
 
 
-
-
 ## firebase/auth.js
 Calling auth API on firebase.auth()
 
-
-## pages/Signup.js
-Signup.js is the UI for Auth which calls the function in auth.js
-
-## User storage
+## User storage in Firebase
 Firebase console -> Authentication -> Users
 
+## UI side storage
+IndexedDB -> firebaseLocalStorageDB
 
-
-## firebase/UserProvider.js
-Use React Context to share current authenticated session in whole app
-
-UserProvider is top level component of the app
+## Use React Context share user auth state in React App
+UserProvider(firebase/UserProvider.js) is top level component of the app
 
 In UserProvider create a state for the current session
 ```
@@ -37,9 +30,25 @@ Use useEffect to listen any Firebase authenticaiton changes
 use the data in context in other component
 ```
   import { useSession } from '../firebase/UserProvider';
+
+  
+  const { user } = useSession();
 ```
 
-## Add signup link in App
+##  Signup
+
+Add signup link in App
 ```
 <Route exact path="/signup" component={Signup} />
 ```
+
+Add Signup page pages/Signup.js
+Signup.js calls the function in auth.js
+
+
+## Logout
+Add logoutUser() function in Header
+
+
+## Login
+

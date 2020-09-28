@@ -13,7 +13,7 @@ export const signup = async ({ firstName, lastName, email, password }) => {
 };
 
 export const logout = () => {
-  return firebase.auth().signOut();
+  return firebase.auth().signOut();  //return a promise.
 };
 
 export const login = async ({ email, password }) => {
