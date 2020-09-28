@@ -24,3 +24,6 @@ Modify storage.rules and deploy
 ```
   firebase deploy --only storage:rules
 ```
+
+
+## ProflieImage.js for image uploading.
