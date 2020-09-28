@@ -8,17 +8,20 @@ import { updateUserDocument } from '../firebase/user';
 
 const Profile = () => {
   const { user } = useSession();
-  const params = useParams();
+  const params = useParams();  // hold the user id passed by router
   const { register, setValue, handleSubmit } = useForm();
   const [userDocument, setUserDocument] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const docRef = firestore.collection('users').doc(params.id);
+    // onSnapshot listen to the real time change
     const unsubscribe = docRef.onSnapshot((doc) => {
       if (doc.exists) {
         const documentData = doc.data();
         setUserDocument(documentData);
+
+        // format data [key, value] to {key, value}
         const formData = Object.entries(documentData).map((entry) => ({
           [entry[0]]: entry[1],
         }));

@@ -13,4 +13,9 @@
   const { register, handleSubmit, reset } = useForm();
 ```
 
+link UI element with react-hook-form
+```
+  <input type="text" name="state" ref={register} />
+```
+
 
