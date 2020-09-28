@@ -31,7 +31,7 @@ use the data in context in other component
 ```
   import { useSession } from '../firebase/UserProvider';
 
-  
+
   const { user } = useSession();
 ```
 
@@ -51,4 +51,18 @@ Add logoutUser() function in Header
 
 
 ## Login
+Login page(pages/Login.js) calls the function in auth.js
+
+
+
+## Router with Auth
+High order components (/routers/) for a user session and redirct accordingly.
+
+- ProfileRedirect.js
+After user login or signup, "hide" login/signup page and redirect user to profile page.
+
+- PrivateRoute.js
+Check user id passed in with the user id in session.
+
+
 
