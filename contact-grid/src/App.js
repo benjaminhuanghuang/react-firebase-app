@@ -4,29 +4,29 @@ import { Route, Switch, BrowserRouter, Redirect } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 //
-import Header from './Header';
 import "./firebase/config";
-import "./pages/Signup";
 
+import { UserProvider } from "./firebase/UserProvider";
+//-- UI
+import Header from "./Header";
+import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header></Header>
-      <div className="app">
-        <div className="ui grid container">
-          <Switch>
-            {/* <ProfileRedirect exact path="/signup" component={Signup} />
-            <PrivateRoute exact path="/profile/:id" component={Profile} />
-            <ProfileRedirect exact path="/login" component={Login} />
-            <AdminRoute exact path="/users" component={Users} /> */}
-            <Route exact path="/">
-              <Redirect to="/login" />
-            </Route>
-          </Switch>
+    <UserProvider>
+      <BrowserRouter>
+        <Header></Header>
+        <div className="app">
+          <div className="ui grid container">
+            <Switch>
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/profile/:id" component={Profile} />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 

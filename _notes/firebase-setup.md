@@ -31,8 +31,7 @@ Add use it like
     ...
   })
 ```
-or
-Copy paste firebase config into a .js file and use it like
+or Copy paste firebase config into a .js file and use it like
 ```
   firebase.initializeApp(firebaseConfig);
 ```

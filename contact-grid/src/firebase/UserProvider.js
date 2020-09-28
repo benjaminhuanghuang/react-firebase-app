@@ -23,7 +23,7 @@ export const UserProvider = (props) => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, []);  // [] in order to run teh effect and clean up only once
 
   return (
     <UserContext.Provider value={session}>
