@@ -27,3 +27,18 @@ Modify storage.rules and deploy
 
 
 ## ProflieImage.js for image uploading.
+
+
+Upload progress
+```
+  const [uploadProgress, setUploadProgress] = useState(0);
+
+
+  <progress
+    style={{ width: '100%' }}
+    max="100"
+    value={uploadProgress}
+  ></progress>
+```
+
+Add callback in uploadTask.on

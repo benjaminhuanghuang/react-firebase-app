@@ -11,6 +11,7 @@ export const ProfileImage = ({ id }) => {
   const [imageUrl, setImageUrl] = useState('');
   const [uploadProgress, setUploadProgress] = useState(0);
 
+  // download image when component mount
   useEffect(() => {
     getDownloadUrl(id).then((url) => !!url && setImageUrl(url));
   }, [id]);
